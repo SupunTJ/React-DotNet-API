@@ -4,6 +4,7 @@ using DotNetAPI.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace DotNetAPI.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20240526071813_addMenuItem")]
+    partial class addMenuItem
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -121,108 +124,6 @@ namespace DotNetAPI.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("MenuItems");
-
-                    b.HasData(
-                        new
-                        {
-                            Id = 1,
-                            Category = "Appetizer",
-                            Description = "Fusc tincidunt maximus leo, sed scelerisque massa auctor sit amet. Donec ex mauris, hendrerit quis nibh ac, efficitur fringilla enim.",
-                            Image = "https://reactdotnetimages.blob.core.windows.net/reactdotnet/spring roll.jpg",
-                            Name = "Spring Roll",
-                            Price = 7.9900000000000002,
-                            SpecialTag = ""
-                        },
-                        new
-                        {
-                            Id = 2,
-                            Category = "Appetizer",
-                            Description = "Fusc tincidunt maximus leo, sed scelerisque massa auctor sit amet. Donec ex mauris, hendrerit quis nibh ac, efficitur fringilla enim.",
-                            Image = "https://reactdotnetimages.blob.core.windows.net/reactdotnet/idli.jpg",
-                            Name = "Idli",
-                            Price = 8.9900000000000002,
-                            SpecialTag = ""
-                        },
-                        new
-                        {
-                            Id = 3,
-                            Category = "Appetizer",
-                            Description = "Fusc tincidunt maximus leo, sed scelerisque massa auctor sit amet. Donec ex mauris, hendrerit quis nibh ac, efficitur fringilla enim.",
-                            Image = "https://reactdotnetimages.blob.core.windows.net/reactdotnet/pani puri.jpg",
-                            Name = "Panu Puri",
-                            Price = 8.9900000000000002,
-                            SpecialTag = "Best Seller"
-                        },
-                        new
-                        {
-                            Id = 4,
-                            Category = "Entrée",
-                            Description = "Fusc tincidunt maximus leo, sed scelerisque massa auctor sit amet. Donec ex mauris, hendrerit quis nibh ac, efficitur fringilla enim.",
-                            Image = "https://reactdotnetimages.blob.core.windows.net/reactdotnet/hakka noodles.jpg",
-                            Name = "Hakka Noodles",
-                            Price = 10.99,
-                            SpecialTag = ""
-                        },
-                        new
-                        {
-                            Id = 5,
-                            Category = "Entrée",
-                            Description = "Fusc tincidunt maximus leo, sed scelerisque massa auctor sit amet. Donec ex mauris, hendrerit quis nibh ac, efficitur fringilla enim.",
-                            Image = "https://reactdotnetimages.blob.core.windows.net/reactdotnet/malai kofta.jpg",
-                            Name = "Malai Kofta",
-                            Price = 12.99,
-                            SpecialTag = "Top Rated"
-                        },
-                        new
-                        {
-                            Id = 6,
-                            Category = "Entrée",
-                            Description = "Fusc tincidunt maximus leo, sed scelerisque massa auctor sit amet. Donec ex mauris, hendrerit quis nibh ac, efficitur fringilla enim.",
-                            Image = "https://reactdotnetimages.blob.core.windows.net/reactdotnet/paneer pizza.jpgg",
-                            Name = "Paneer Pizza",
-                            Price = 11.99,
-                            SpecialTag = ""
-                        },
-                        new
-                        {
-                            Id = 7,
-                            Category = "Entrée",
-                            Description = "Fusc tincidunt maximus leo, sed scelerisque massa auctor sit amet. Donec ex mauris, hendrerit quis nibh ac, efficitur fringilla enim.",
-                            Image = "https://reactdotnetimages.blob.core.windows.net/reactdotnet/paneer tikka.jpg",
-                            Name = "Paneer Tikka",
-                            Price = 13.99,
-                            SpecialTag = "Chef's Special"
-                        },
-                        new
-                        {
-                            Id = 8,
-                            Category = "Dessert",
-                            Description = "Fusc tincidunt maximus leo, sed scelerisque massa auctor sit amet. Donec ex mauris, hendrerit quis nibh ac, efficitur fringilla enim.",
-                            Image = "https://reactdotnetimages.blob.core.windows.net/reactdotnet/carrot love.jpg",
-                            Name = "Carrot Love",
-                            Price = 4.9900000000000002,
-                            SpecialTag = ""
-                        },
-                        new
-                        {
-                            Id = 9,
-                            Category = "Dessert",
-                            Description = "Fusc tincidunt maximus leo, sed scelerisque massa auctor sit amet. Donec ex mauris, hendrerit quis nibh ac, efficitur fringilla enim.",
-                            Image = "https://reactdotnetimages.blob.core.windows.net/reactdotnet/rasmalai.jpg",
-                            Name = "Rasmalai",
-                            Price = 4.9900000000000002,
-                            SpecialTag = "Chef's Special"
-                        },
-                        new
-                        {
-                            Id = 10,
-                            Category = "Dessert",
-                            Description = "Fusc tincidunt maximus leo, sed scelerisque massa auctor sit amet. Donec ex mauris, hendrerit quis nibh ac, efficitur fringilla enim.",
-                            Image = "https://reactdotnetimages.blob.core.windows.net/reactdotnet/sweet rolls.jpg",
-                            Name = "Sweet Rolls",
-                            Price = 3.9900000000000002,
-                            SpecialTag = "Top Rated"
-                        });
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRole", b =>
