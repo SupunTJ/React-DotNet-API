@@ -3,6 +3,7 @@ using DotNetAPI.Models;
 using DotNetAPI.Models.Dto;
 using DotNetAPI.Services;
 using DotNetAPI.Utility;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using System.Net;
 
@@ -53,6 +54,7 @@ namespace DotNetAPI.Controllers
         }
 
         [HttpPost]
+        [Authorize(Roles = SD.Role_Admin)]
         public async Task<ActionResult<ApiResponse>> CreateMenuItem([FromForm]MenuItemCreateDTO menuItemCreateDTO)
         {
             try
@@ -96,6 +98,7 @@ namespace DotNetAPI.Controllers
         }
 
         [HttpPut("{id:int}")]
+        [Authorize(Roles = SD.Role_Admin)]
         public async Task<ActionResult<ApiResponse>> UpdateMenuItem(int id,[FromForm] MenuItemUpdateDTO menuItemUpdateDTO)
         {
             try
@@ -157,6 +160,7 @@ namespace DotNetAPI.Controllers
 
 
         [HttpDelete("{id:int}")]
+        [Authorize(Roles = SD.Role_Admin)]
         public async Task<ActionResult<ApiResponse>> DeleteMenuItem(int id)
         {
             try

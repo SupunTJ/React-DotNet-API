@@ -2,6 +2,7 @@
 using DotNetAPI.Models;
 using DotNetAPI.Models.Dto;
 using DotNetAPI.Utility;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using System.Net;
@@ -72,6 +73,7 @@ namespace DotNetAPI.Controllers
         //    return _response;
         //}
 
+        [Authorize]
         [HttpGet]
         public async Task<ActionResult<ApiResponse>> GetOrders(string? userId)
         {
